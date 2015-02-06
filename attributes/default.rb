@@ -50,6 +50,12 @@ default[:newrelic][:rackspace_queues][:download_url] = "https://github.com/newre
 default[:newrelic][:rackspace_queues][:install_path] = "/opt/newrelic"
 default[:newrelic][:rackspace_queues][:plugin_path] = "#{node[:newrelic][:rackspace_queues][:install_path]}/newrelic_rackspace_queues_plugin"
 
+# beanstalkd attributes
+default[:newrelic][:beanstalkd][:version] = "0.0.1"
+default[:newrelic][:beanstalkd][:download_url] = "https://github.com/djoos/newrelic_beanstalkd_plugin/archive/#{node[:newrelic][:beanstalkd][:version]}.tar.gz"
+default[:newrelic][:beanstalkd][:install_path] = "/opt/newrelic"
+default[:newrelic][:beanstalkd][:plugin_path] = "#{node[:newrelic][:beanstalkd][:install_path]}/newrelic_beanstalkd_plugin"
+
 # wikipedia example java plugin attributes
 default[:newrelic][:wikipedia_example_java][:version] = "1.0.8"
 default[:newrelic][:wikipedia_example_java][:download_url] = "https://github.com/newrelic-platform/newrelic_java_wikipedia_plugin/raw/master/dist/newrelic_wikipedia_plugin-#{node[:newrelic][:wikipedia_example_java][:version]}.tar.gz"
