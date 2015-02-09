@@ -39,7 +39,7 @@ end
 
 # install init.d script and start service
 plugin_service 'newrelic-beanstalkd-plugin' do
-  daemon          './bin/newrelic_rs'
+  daemon          './bin/newrelic_beanstalkd'
   daemon_dir      node[:newrelic][:beanstalkd][:plugin_path]
   plugin_name     'Beanstalkd'
   plugin_version  node[:newrelic][:beanstalkd][:version]
