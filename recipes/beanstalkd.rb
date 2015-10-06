@@ -37,6 +37,14 @@ bundle_install do
   user node[:newrelic][:beanstalkd][:user]
 end
 
+# make sure newrelic_beanstalkd is executable
+execute 'newrelic-beanstalkd-plugin-chmod' do
+  user 'root'
+  cwd node[:newrelic][:beanstalkd][:plugin_path]
+  command 'chmod +x bin/newrelic_beanstalkd'
+  action :run
+end
+
 # install init.d script and start service
 plugin_service 'newrelic-beanstalkd-plugin' do
   daemon          './bin/newrelic_beanstalkd'
